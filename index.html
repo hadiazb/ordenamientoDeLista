@@ -91,7 +91,7 @@
         .table__cabeza {
             width: 100%;
             padding: 10px;
-            background-color: rgba(255, 255 , 255 , .2 );
+            background-color: rgba(255, 255 , 255 , .4 );
         }
         .uno {
             background-color: rgba(255, 255 , 255 , .2 );
@@ -109,20 +109,14 @@
             width: 20px;
             text-align: left;
         }        
-        .nombre {
-            width: calc((100% - 60px) / 3);
-            text-align: left;
+        .tablaFooter {
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(255, 255 , 255 , .4 );
         }
-        .apellido {
-            width: calc((100% - 60px) / 3);
-            text-align: left;
-        }
-        .edad {
-            width: 40px;
-        }
-        .carrera {
-            width: calc((100% - 60px) / 3);
-            text-align: left;
+        .table #total td {
+            padding: 10px  20px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -154,6 +148,11 @@
             <tbody id="cuerpoTabla">
 
             </tbody>
+            <tfoot class="tablaFooter">
+                <tr id="total">
+
+                </tr>
+            </tfoot>
         </table>
     </div>
 </body>

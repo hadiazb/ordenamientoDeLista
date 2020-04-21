@@ -5,14 +5,15 @@ function cargar() {
     document.getElementById('boton').addEventListener('click', pintar, false);
 }
 
+
 var data = [
     {
-      "nombre": null,
-      "apellido": null,
-      "edad": null,
-      "carrera": null,
+        "nombre": null,
+        "apellido": null,
+        "edad": null,
+        "carrera": null,
     }
-  ];
+];
 
 function limpiar() {
     document.getElementById("nombre").value = '';
@@ -23,16 +24,24 @@ function limpiar() {
 
 function pintar() {
     var cuerpoTabla = document.getElementById("cuerpoTabla");
+    var totales = document.getElementById("total");
+    var completarFooter = "";
     var completarTabla = "";
     var indice = 2;
+    var contador = 1;
     for (let i = 1; i < data.length; i++) {
         if (i % indice == 0) {
             completarTabla += `<tr class="table__filas uno"><td class="numero center">${i}</td><td>${data[i].nombre}</td><td>${data[i].apellido}</td><td class="center">${data[i].edad}</td><td>${data[i].carrera}</td></tr>`;
+            completarFooter = `<tr class="table__filas uno"><td class="center">${contador}</td><td></td><td></td><td></td><td></td></tr>`;
         } else {
             completarTabla += `<tr class="table__filas"><td class="numero center">${i}</td><td>${data[i].nombre}</td><td>${data[i].apellido}</td><td class="center">${data[i].edad}</td><td>${data[i].carrera}</td></tr>`;
+            completarFooter = `<tr class="table__filas uno"><td class="center">${contador}</td><td></td><td></td><td></td><td></td></tr>`;
+
         }
+        contador++;
     }
     cuerpoTabla.innerHTML = completarTabla;
+    totales.innerHTML = completarFooter;
     
 }
 
@@ -46,5 +55,5 @@ function newData(){
         data.push(newPerson);
     } 
     limpiar();
-
+    
 }
