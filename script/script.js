@@ -23,11 +23,14 @@ function limpiar() {
 
 function pintar() {
     var cuerpoTabla = document.getElementById("cuerpoTabla");
-    
     var completarTabla = "";
-
+    var indice = 2;
     for (let i = 1; i < data.length; i++) {
-        completarTabla += `<tr class="table__filas"><td class="numero center">${i}</td><td>${data[i].nombre}</td><td>${data[i].apellido}</td><td class="center">${data[i].edad}</td><td>${data[i].carrera}</td></tr>`;
+        if (i % indice == 0) {
+            completarTabla += `<tr class="table__filas uno"><td class="numero center">${i}</td><td>${data[i].nombre}</td><td>${data[i].apellido}</td><td class="center">${data[i].edad}</td><td>${data[i].carrera}</td></tr>`;
+        } else {
+            completarTabla += `<tr class="table__filas"><td class="numero center">${i}</td><td>${data[i].nombre}</td><td>${data[i].apellido}</td><td class="center">${data[i].edad}</td><td>${data[i].carrera}</td></tr>`;
+        }
     }
     cuerpoTabla.innerHTML = completarTabla;
     
@@ -39,8 +42,9 @@ function newData(){
     var edad      =   parseInt(parseFloat(document.getElementById("edad").value));
     var carrera   =   document.getElementById("carrera").value;
     var newPerson = { "nombre": nombre, "apellido": apellido, "edad": edad, "carrera": carrera };
-    
-    data.push(newPerson);
+    if (nombre !== '') {
+        data.push(newPerson);
+    } 
     limpiar();
 
 }
