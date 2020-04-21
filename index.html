@@ -42,14 +42,16 @@
         .formulario__input {
             display: inline-block;
             width: 100%;
-            height: 50px;
+            height: 40px;
             padding: 0 20px;
             font-size: 17px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: white;
-            border-radius: 30px;
-            border: 0.5px solid white;
-            background-color: rgba(255, 255, 255, .2) ;
+            border-left: none;
+            border-top: none;
+            border-right: none;
+            border-bottom: 1px solid white;
+            background-color: transparent ;
             outline: none;
         }
         .formulario__boton {
@@ -92,28 +94,32 @@
             background-color: rgba(255, 255 , 255 , .2 );
         }
         .table .table__filas th {
-            padding: 10px 0;
+            padding: 10px  20px;
         }
         .table .table__filas td{
-            padding: 10px;
+            padding: 10px 20px;
         }
-        .table .table__filas .center{
+        .center{
             text-align: center;
         }
         .numero {
             width: 20px;
+            text-align: left;
         }        
         .nombre {
-            width: 40px;
+            width: calc((100% - 60px) / 3);
+            text-align: left;
         }
         .apellido {
-            width: 40px;
+            width: calc((100% - 60px) / 3);
+            text-align: left;
         }
         .edad {
             width: 40px;
         }
         .carrera {
-            width: 40px;
+            width: calc((100% - 60px) / 3);
+            text-align: left;
         }
     </style>
 </head>

@@ -14,10 +14,15 @@ var data = [
     }
   ];
 
+function limpiar() {
+    document.getElementById("nombre").value = '';
+    document.getElementById("apellido").value = '';
+    document.getElementById("edad").value = '';
+    document.getElementById("carrera").value = '';
+}
 
 function pintar() {
     var cuerpoTabla = document.getElementById("cuerpoTabla");
-    console.log(cuerpoTabla);
     
     var completarTabla = "";
 
@@ -25,7 +30,6 @@ function pintar() {
         completarTabla += `<tr class="table__filas"><td class="numero center">${i}</td><td>${data[i].nombre}</td><td>${data[i].apellido}</td><td class="center">${data[i].edad}</td><td>${data[i].carrera}</td></tr>`;
     }
     cuerpoTabla.innerHTML = completarTabla;
-    console.log(completarTabla);
     
 }
 
@@ -37,6 +41,6 @@ function newData(){
     var newPerson = { "nombre": nombre, "apellido": apellido, "edad": edad, "carrera": carrera };
     
     data.push(newPerson);
-    console.log(data);
+    limpiar();
 
 }
